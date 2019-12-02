@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const m =require('./message.js');
 const Token = process.env.TOKEN;
 
 let  testChannel;
@@ -13,10 +14,10 @@ client.on('ready', () => {
     
 });
 
-client.on('message', (msg) => {
-    if(msg.content === "hello"){
-        msg.channel.send("hello, " + msg.author);
-    }
-});
 
+client.on('message', (msg) => {
+    m.message(msg);
+ 
+    
+});
 client.login(Token);
